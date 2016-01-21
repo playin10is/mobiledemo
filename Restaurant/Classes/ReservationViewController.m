@@ -76,6 +76,13 @@ typedef enum {
     if (indexPath.row == ReservationCellMakeReservation) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You" message:@"You have booked table. Thanks for your reservation." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
+        
+        [Localytics tagEvent:@"Booked Table" attributes:@{
+                                                         @"Number of Guests": @"5",
+                                                         @"Plan": @"Premium"
+                                                        }];
+
+        
     }
 }
 
