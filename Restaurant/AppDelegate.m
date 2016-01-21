@@ -51,6 +51,10 @@ typedef enum {
                                                 @"Plan": @"Premium"
                                                 }];
 
+    [Localytics tagEvent:@"Opened app" attributes:@{
+                                                    @"Gender": @"Female",
+                                                    @"Plan": @"Premium"
+                                                    }];
     
     return YES;
 }
@@ -77,7 +81,11 @@ typedef enum {
                                 @"Plan": @"Premium"
                             }];
 
-    
+    [Localytics tagEvent:@"Opened Menu" attributes:@{
+                                                    @"Gender": @"Female",
+                                                    @"Plan": @"Premium"
+                                                    }];
+  
     
 }
 
@@ -91,6 +99,12 @@ typedef enum {
 
 - (void)openFeedback{
     [self openControllerWithIndentifier:@"feedbackNavController"];
+
+    [Localytics tagEvent:@"Opened Feedback" attributes:@{
+                                                     @"Gender": @"Male",
+                                                     @"Plan": @"Gold"
+                                                     }];
+
 }
 
 #pragma mark - Private methods
