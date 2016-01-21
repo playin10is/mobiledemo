@@ -1,0 +1,21 @@
+PODS:
+  - Apptimize (2.15.5)
+  - Localytics (3.6.1)
+  - Mixpanel (2.9.1):
+    - Mixpanel/Mixpanel (= 2.9.1)
+  - Mixpanel/Mixpanel (2.9.1)
+  - Taplytics (2.9.6)
+
+DEPENDENCIES:
+  - Apptimize
+  - Localytics (~> 3.0)
+  - Mixpanel
+  - Taplytics
+
+SPEC CHECKSUMS:
+  Apptimize: e4733e0676e996bd31bf1a74dfd9556de50d7873
+  Localytics: 6f365959f1012ebeb0db88fe7dd06b4ff433b18d
+  Mixpanel: 5ca24b2a05f4c77fe9bcfe7671d681d0f3f8d76f
+  Taplytics: 0486ed30eef968ee67668f64c64f914b811696f3
+
+COCOAPODS: 0.39.0
