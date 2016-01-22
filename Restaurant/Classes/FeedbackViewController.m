@@ -12,6 +12,7 @@
 #import "Feedback.h"
 #import "FeedbackTableViewCell.h"
 #import "KeyboardListener.h"
+#import <Analytics/SEGAnalytics.h>
 
 typedef enum {
     OneStarRating = 0,
@@ -45,6 +46,25 @@ typedef enum {
     
     [self initBottomViewShadow];
     [self initTextFieldsUI];
+
+    [[SEGAnalytics sharedAnalytics] screen:@"Feedback"];
+
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Lemon Chicken", @"revenue": @12.95 }];
+
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Red Shirt", @"revenue": @62.95 }];
+
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Yellow socks", @"revenue": @10.95 }];
+
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Blue Sweater", @"revenue": @80.45 }];
+
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Green dress", @"revenue": @190.95 }];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

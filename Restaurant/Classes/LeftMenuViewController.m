@@ -9,6 +9,7 @@
 #import "LeftMenuViewController.h"
 #import "MenuTableViewCell.h"
 #import "AppDelegate.h"
+#import <Analytics/SEGAnalytics.h>
 
 typedef enum {
     MenuItemOurItem = 0,

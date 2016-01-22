@@ -11,6 +11,7 @@
 #import "MenuItem.h"
 #import "MenuItemsManager.h"
 #import "MenuItemTableViewCell.h"
+#import <Analytics/SEGAnalytics.h>
 
 @interface OurMenuViewController ()
 

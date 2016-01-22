@@ -13,6 +13,7 @@
 #import "NumberOfGuestsTableViewCell.h"
 #import "PhoneNumberTableViewCell.h"
 #import "MakeReservationTableViewCell.h"
+#import <Analytics/SEGAnalytics.h>
 
 typedef enum {
     ReservationCellLocation = 0,
@@ -77,12 +78,19 @@ typedef enum {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You" message:@"You have booked table. Thanks for your reservation." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
         
-        [Localytics tagEvent:@"Booked Table" attributes:@{
-                                                         @"Number of Guests": @"5",
-                                                         @"Plan": @"Premium"
-                                                        }];
+        [Localytics tagEvent:@"Purchase" attributes:@{ @"item": @"Sword of Heracles", @"revenue": @12.95 }];
+        [Localytics tagEvent:@"Purchase" attributes:@{ @"item": @"Green Pants", @"revenue": @89.50 }];
 
-        
+        [[SEGAnalytics sharedAnalytics] screen:@"Reservation"];
+
+        [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                                   properties:@{ @"item": @"Sword of Heracles", @"revenue": @12.95 }];
+
+        [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                                   properties:@{ @"item": @"Green Pants", @"revenue": @89.50 }];
+
+    
+    
     }
 }
 

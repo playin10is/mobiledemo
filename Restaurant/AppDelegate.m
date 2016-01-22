@@ -15,6 +15,7 @@
 #import "Localytics.h"
 #import <Taplytics/Taplytics.h>
 #import "Mixpanel.h"
+#import <Analytics/SEGAnalytics.h>
 
 static NSInteger secondsInHour = 60;
 
@@ -42,19 +43,20 @@ typedef enum {
     [Taplytics startTaplyticsAPIKey:@"d9ba01a31e8d6d3d3de5a6b079c48107d396556c"];
     [Mixpanel sharedInstanceWithToken:@"fb25d24b0d4d0786d308f0c0498ba09f"];
     [Taplytics startTaplyticsAPIKey:@"578f6de6ae8383fd9713f65a9a65eba18ca8368f"];
+    [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"hIOmJlHzdejW1iSYwr2Fp309Hukc7Zqy"]];
 
     
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    
-    [mixpanel track:@"Opened app" properties:@{
-                                                @"Gender": @"Female",
-                                                @"Plan": @"Premium"
-                                                }];
+//    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+//    
+//    [mixpanel track:@"Home Screen" properties:@{@"Gender": @"Female", @"Plan": @"Premium"}];
+//    [Localytics tagEvent:@"Home Screen" attributes:@{@"Gender": @"Female", @"Plan": @"Premium"}];
 
-    [Localytics tagEvent:@"Opened app" attributes:@{
-                                                    @"Gender": @"Female",
-                                                    @"Plan": @"Premium"
-                                                    }];
+    
+    [[SEGAnalytics sharedAnalytics] screen:@"Home Screen"];
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Yellow socks", @"revenue": @10.95 }];
+
+    [SEGAnalytics debug:YES];
     
     return YES;
 }
@@ -74,17 +76,17 @@ typedef enum {
 - (void)openOurMenu {
     [self openControllerWithIndentifier:@"ourMenuNavController"];
     
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-
-    [mixpanel track:@"Opened Menu" properties:@{
-                                @"Gender": @"Female",
-                                @"Plan": @"Premium"
-                            }];
-
-    [Localytics tagEvent:@"Opened Menu" attributes:@{
-                                                    @"Gender": @"Female",
-                                                    @"Plan": @"Premium"
-                                                    }];
+//    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+//
+//    [mixpanel track:@"Opened Menu" properties:@{
+//                                @"Gender": @"Female",
+//                                @"Plan": @"Premium"
+//                            }];
+//
+//    [Localytics tagEvent:@"Opened Menu" attributes:@{
+//                                                    @"Gender": @"Female",
+//                                                    @"Plan": @"Premium"
+//                                                    }];
   
     
 }

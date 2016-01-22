@@ -58,6 +58,7 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "Appboy-iOS-SDK/AppboyKit/Appboy.bundle"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png"
@@ -72,8 +73,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo@2x.png"
   install_resource "Mixpanel/Mixpanel/MPNotification.storyboard"
   install_resource "Mixpanel/Mixpanel/MPSurvey.storyboard"
+  install_resource "${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "Appboy-iOS-SDK/AppboyKit/Appboy.bundle"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png"
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png"
@@ -88,6 +91,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "Mixpanel/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo@2x.png"
   install_resource "Mixpanel/Mixpanel/MPNotification.storyboard"
   install_resource "Mixpanel/Mixpanel/MPSurvey.storyboard"
+  install_resource "${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

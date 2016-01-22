@@ -5,7 +5,7 @@
 	<key>Item1</key>
 	<dict>
 		<key>name</key>
-		<string>SALMON DISH</string>
+		<string>MISO GLAZED SALMON</string>
 		<key>ingredients</key>
 		<string>(salmon, lemon cucumber salt, asparagus)</string>
 		<key>image</key>
@@ -18,7 +18,7 @@
 	<key>Item2</key>
 	<dict>
 		<key>name</key>
-		<string>SMOKED SAUSAGE</string>
+		<string>TURKEY MINI MEAT LOAVES</string>
 		<key>ingredients</key>
 		<string>(smoked pork sausage, bahuette, cheese spread)</string>
 		<key>image</key>
@@ -29,13 +29,15 @@
 	<key>Item3</key>
 	<dict>
 		<key>name</key>
-		<string>BACON AND CHICKEN</string>
+		<string>LEMON CHICKEN </string>
 		<key>ingredients</key>
 		<string>(baked bacon, chicken, potatos, vegetables)</string>
 		<key>image</key>
 		<string>photo_item1</string>
 		<key>price</key>
 		<string>$10</string>
+		<key>discount</key>
+		<string>Most Popular</string>
 	</dict>
 	<key>Item4</key>
 	<dict>

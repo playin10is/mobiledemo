@@ -8,6 +8,7 @@
 
 #import "FindUsViewController.h"
 #import "MSViewControllerSlidingPanel.h"
+#import <Analytics/SEGAnalytics.h>
 
 @interface FindUsViewController ()
 
@@ -19,6 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[SEGAnalytics sharedAnalytics] screen:@"Find Us"];
+    
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Lemon Chicken", @"revenue": @12.95 }];
+    
+    [[SEGAnalytics sharedAnalytics] track:@"Purchase"
+                               properties:@{ @"item": @"Red Shirt", @"revenue": @62.95 }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,5 +53,6 @@
 - (IBAction)onMakeReservation:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You" message:@"You have booked table. Thanks for your reservation." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
+
 }
 @end
